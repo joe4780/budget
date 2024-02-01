@@ -1,0 +1,14 @@
+.dashboard-row{
+    margin-bottom: 100px;
+}
+.dashboard-card{
+    text-align: center;
+}
+
+.dashboard-card:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+th{
+    color: #0D6EFD;
+}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'products/products.css' %}"/>
+{% endblock %}
+
+{% block title %} Quantity Type {% endblock %}
+
+{% block content %}
+<div class="row justify-content-md-center">
+  <div class="col col-lg-8">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Units</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ quantity_type.name }}</a></td>
+          <td>{{ quantity_type.units }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

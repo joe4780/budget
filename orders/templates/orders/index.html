@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'orders/orders.css' %}" />
+{% endblock %} {% block title %} Orders {% endblock %} {% block content %}
+<div class="row justify-content-md-center budget-row">
+  <div class="col col-lg-8">
+    <form action="/orders/create-order/" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+        </div>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-plus"></i> Create Order</button>
+    </form>
+  </div>
+</div>
+<div class="row justify-content-md-center budget-row">
+  <div class="col col-lg-8">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Order</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for o in orders %}
+        <tr>
+          <td><a class="row-link" href="{% url 'order' o.id %}">ORD-{{ o.id }}</a></td>
+          <td>{{ o.date_created }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
